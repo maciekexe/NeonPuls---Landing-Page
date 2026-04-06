@@ -17,7 +17,7 @@
             <a href="#specs">Specyfikacja</a>
             <a href="#reviews">Opinie</a>
         </div>
-        <a href="#buy" class="btn-nav">Kup Teraz</a>
+        <button class="buy-button btn-nav">Kup Teraz</button>
     </nav>
 
     <header>
@@ -26,7 +26,7 @@
             <h1>Usłysz wroga,<br>zanim on usłyszy Ciebie.</h1>
             <p>NeonPulse X1 to słuchawki stworzone dla e-sportowców. Przestrzenny dźwięk 7.1, ultralekka konstrukcja i zero opóźnień.</p>
             <div class="hero-buttons">
-                <button onclick="demoShop()" class="btn-primary">Zamów Preorder <i class="fas fa-arrow-right"></i></button>
+                <button class="buy-button btn-primary">Zamów Preorder <i class="fas fa-arrow-right"></i></button>
                 <a href="#specs" class="btn-secondary">Zobacz specyfikację</a>
             </div>
         </div>
@@ -143,13 +143,70 @@
         <h2>Wejdź na wyższy poziom gamingu</h2>
         <p>Dołącz do 10,000 graczy, którzy wybrali NeonPulse.</p>
         <br>
-        <a href="#" class="btn-primary btn-large">Kup teraz za 299 zł</a>
+        <button class="buy-button btn-primary btn-large">Kup teraz za 299 zł</button>
         <p class="small-text">*Darmowa wysyłka w 24h</p>
     </section>
 
     <footer>
         <p>&copy; 2026 NeonPulse. Projekt edukacyjny do portfolio.</p>
     </footer>
+
+<section id="payment-modal" class="modal-overlay hidden">
+  <div class="modal-box">
+    <button id="close-modal" class="close-btn">&times;</button>
+    
+    <div id="payment-form-container">
+      <h2>Finalizacja zamówienia</h2>
+      <p class="order-summary">Słuchawki Preorder - <strong>299 zł</strong></p>
+      
+      <form id="payment-form">
+        <div class="input-group">
+          <label for="name">Imię i nazwisko</label>
+          <input type="text" id="name" required placeholder="Jan Kowalski">
+        </div>
+        
+        <div class="input-group">
+          <label for="email">Adres E-mail</label>
+          <input type="email" id="email" required placeholder="jan@example.com">
+        </div>
+        
+        <div class="input-group">
+          <label for="card">Numer karty (fikcyjny)</label>
+          <input type="text" id="card" required placeholder="1234 5678 9101 1121" maxlength="19">
+          <small id="card-error" class="error-text hidden">Karta musi mieć 16 cyfr</small>
+        </div>
+        
+        <div class="row">
+          <div class="input-group">
+            <label for="expiry">Ważność</label>
+            <input type="text" id="expiry" required placeholder="MM/RR" maxlength="5">
+          </div>
+          <div class="input-group">
+            <label for="cvv">CVV</label>
+            <input type="text" id="cvv" required placeholder="123" maxlength="3">
+          </div>
+        </div>
+
+        <button type="submit" id="submit-payment" class="submit-btn">
+          <span id="btn-text">Zapłać 299 zł</span>
+          <span id="btn-spinner" class="spinner hidden"></span>
+        </button>
+      </form>
+    </div>
+
+    <div id="success-message" class="hidden text-center">
+      <div class="success-icon">✓</div>
+      <h3>Płatność zakończona!</h3>
+      <p>Dziękuję za przetestowanie mojego projektu. To jest wersja demonstracyjna, żadne środki nie zostały pobrane.</p>
+      <button id="close-success" class="submit-btn outline">Wróć do strony</button>
+    </div>
+
+  </div>
+</section>
+
+
+
+
 
 </body>
 <script src="script.js"></script>

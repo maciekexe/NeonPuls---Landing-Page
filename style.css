@@ -433,3 +433,79 @@ button.btn-primary {
 @media (max-width: 768px) {
     .section-title { font-size: 2rem; }
 }
+
+
+
+.hidden { display: none !important; }
+
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.modal-overlay.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+
+.modal-box {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 400px;
+  position: relative;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  transform: translateY(0);
+  transition: transform 0.3s ease;
+}
+
+.modal-overlay.hidden .modal-box { transform: translateY(20px); }
+
+
+.close-btn {
+  position: absolute; top: 15px; right: 15px;
+  background: none; border: none; font-size: 24px; cursor: pointer; color: #666;
+}
+
+
+.order-summary { font-size: 1.1em; margin-bottom: 20px; color: #333; border-bottom: 1px solid #eee; padding-bottom: 10px; }
+.input-group { margin-bottom: 15px; text-align: left; }
+.input-group label { display: block; margin-bottom: 5px; font-size: 0.9em; color: #555; }
+.input-group input { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box; }
+.input-group input:focus { border-color: #007BFF; outline: none; }
+.row { display: flex; gap: 15px; }
+.error-text { color: #dc3545; font-size: 0.8em; margin-top: 5px; display: block; }
+
+
+.submit-btn {
+  width: 100%; padding: 12px; background: #000; color: #fff;
+  border: none; border-radius: 6px; font-size: 1em; cursor: pointer;
+  display: flex; justify-content: center; align-items: center; gap: 10px;
+  transition: background 0.2s;
+}
+.submit-btn:hover { background: #333; }
+.submit-btn.outline { background: transparent; color: #000; border: 1px solid #000; margin-top: 15px; }
+
+
+.spinner {
+  width: 18px; height: 18px;
+  border: 3px solid rgba(255,255,255,0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* Ekran sukcesu */
+.text-center { text-align: center; }
+.success-icon { font-size: 50px; color: #28a745; margin-bottom: 10px; }
